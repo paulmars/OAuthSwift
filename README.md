@@ -82,6 +82,7 @@ func handleGetURL(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDe
 oauthswift = OAuth1Swift(
     consumerKey:    "********",
     consumerSecret: "********",
+    
     requestTokenUrl: "https://api.twitter.com/oauth/request_token",
     authorizeUrl:    "https://api.twitter.com/oauth/authorize",
     accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
@@ -98,6 +99,9 @@ let handle = oauthswift.authorize(
     }             
 )
 ```
+
+Note: you must retain the handler or you will get a "retain" error.
+
 ### Authorize with OAuth2.0
 ```swift
 oauthswift = OAuth2Swift(
